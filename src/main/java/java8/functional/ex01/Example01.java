@@ -1,4 +1,4 @@
-package java8.functional;
+package java8.functional.ex01;
 
 public class Example01 {
 
