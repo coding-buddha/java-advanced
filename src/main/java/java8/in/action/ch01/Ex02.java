@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 /**
  * Ex01 에 대한 코드 넘겨주기 예제
@@ -29,7 +30,17 @@ public class Ex02 {
         /**
          * 람다 표현식이 길어진다면 메소드 참조로 변경하는 것이 더 바람직하다.
          */
-        final List<Apple> filterAPples3 = filterApplesOpt(apples, (Apple a) -> a.weight < 80 || "brown".equals(a.color));
+        final List<Apple> filterApples3 = filterApplesOpt(apples, (Apple a) -> a.weight < 80 || "brown".equals(a.color));
+
+        /** 순차 **/
+        final List<Apple> applesList1 = apples.stream()
+                .filter(Apple::isGreenApple)
+                .collect(Collectors.toList());
+
+        /** 병렬 **/
+        final List<Apple> applesList2 = apples.parallelStream()
+                .filter(Apple::isGreenApple)
+                .collect(Collectors.toList());
     }
 
     // 필터링 하기 위한 많은 작업이 소요 : 여러 메소드를 만들어야 하는 작업이 필요.
