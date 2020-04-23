@@ -19,10 +19,12 @@ public class Ex02 {
                 new Apple("red", 100),
                 new Apple("red", 150));
 
+        final List<Apple> filteringApples = filterApplesStep01(apples, new AppleGreenColorPredicate());
     }
 
     /**
-     * 추상적 조건으로 필터링 수행.
+     * 추상적 조건으로 필터링 수행 : 다양한 ApplePredicate 를 만들 수 있다.
+     * ==> 결국 메소드의 동작을 파라미터화 시켰다.
      */
     public static List<Apple> filterApplesStep01(List<Apple> inventory, ApplePredicate predicate){
         List<Apple> result = new ArrayList<>();
