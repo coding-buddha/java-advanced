@@ -3,6 +3,7 @@ package java8.in.action.ch02;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Function;
 
 import static java.util.Comparator.comparing;
 
@@ -35,6 +36,23 @@ public class ExFinal {
 
         apples.sort(Comparator.comparingInt(Apple::getWeight));
 
+        // 무게 오름차순
         apples.sort(comparing(Apple::getWeight));
+
+        // 무게 내림차순 (오름차순의 역정렬)
+        apples.sort(comparing(Apple::getWeight).reversed());
+
+        // 무게 역정렬하면서 동일 무게에 대해선 색깔 정렬을 수행
+        apples.sort(comparing(Apple::getWeight)
+                .reversed()
+                .thenComparing(Apple::getColor));
+
+        Function<Integer, Integer> f = (x) -> x + 1;
+        Function<Integer, Integer> g = (x) -> x * 2;
+        Function<Integer, Integer> h1 = f.compose(g);   // f(g(x))
+        Function<Integer, Integer> h2 = f.andThen(g);   // g(f(x))
+
+        System.out.println(h1.apply(1));    // 4
+        System.out.println(h2.apply(1));    // 3
     }
 }
