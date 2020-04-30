@@ -47,6 +47,7 @@ public class Main {
         List<Trader> solveList03 = list.stream()
                 .filter(transaction -> transaction.getTrader().getCity().equals("Cambridge"))
                 .map(Transaction::getTrader)
+                .distinct()
                 .sorted(Comparator.comparing(Trader::getName))
                 .collect(Collectors.toList());
 
@@ -55,7 +56,9 @@ public class Main {
                 .map(Transaction::getTrader)
                 .sorted(Comparator.comparing(Trader::getName))
                 .map(Trader::getName)
+                .distinct()
                 .collect(Collectors.toList());
+
 
         // (5)
         boolean solve05 = list.stream()
@@ -75,6 +78,5 @@ public class Main {
         int min = list.stream()
                 .map(Transaction::getValue)
                 .reduce(Integer::min).get();
-
     }
 }
