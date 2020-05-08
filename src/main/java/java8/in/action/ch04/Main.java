@@ -1,5 +1,7 @@
 package java8.in.action.ch04;
 
+import java8.in.action.model.Dish;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;

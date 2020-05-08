@@ -1,5 +1,8 @@
 package java8.in.action.ch05;
 
+import java8.in.action.model.Trader;
+import java8.in.action.model.Transaction;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;

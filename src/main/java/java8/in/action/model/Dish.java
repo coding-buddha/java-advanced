@@ -1,4 +1,4 @@
-package java8.in.action.ch04;
+package java8.in.action.model;
 
 public class Dish {
     private final String name;
@@ -31,5 +31,15 @@ public class Dish {
 
     public enum Type{
         MEAT, FISH, OTHER
+    }
+
+    @Override
+    public String toString() {
+        return "Dish{" +
+                "name='" + name + '\'' +
+                ", vegetarian=" + vegetarian +
+                ", calories=" + calories +
+                ", type=" + type +
+                '}';
     }
 }

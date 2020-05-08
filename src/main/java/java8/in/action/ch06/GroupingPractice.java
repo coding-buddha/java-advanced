@@ -1,12 +1,14 @@
-package java8.in.action.ch04;
+package java8.in.action.ch06;
 
 import java8.in.action.model.Dish;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class StreamUses {
-    public static void main(String[]args) {
+public class GroupingPractice {
+    public static void main(String[] args) {
+
+        @SuppressWarnings("Duplicates")
         List<Dish> menu = Arrays.asList(
                 new Dish("pork", false, 800, Dish.Type.MEAT),
                 new Dish("beef", false, 700, Dish.Type.MEAT),
@@ -18,8 +20,6 @@ public class StreamUses {
                 new Dish("prawns", false, 300, Dish.Type.FISH),
                 new Dish("salmon", false, 450, Dish.Type.FISH));
 
-        int calories = menu.stream()
-                .mapToInt(Dish::getCalories)    // Stream<T> 형으로 반횐되기 때문에 언박싱을 수행
-                .sum();
+
     }
 }

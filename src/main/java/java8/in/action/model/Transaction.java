@@ -1,4 +1,4 @@
-package java8.in.action.ch05;
+package java8.in.action.model;
 
 public class Transaction {
     private final Trader trader;
