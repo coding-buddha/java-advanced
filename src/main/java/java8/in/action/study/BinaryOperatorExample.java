@@ -20,7 +20,5 @@ public class BinaryOperatorExample {
 
         final BinaryOperator<Integer> addAndReturnValueFunc2 = (x, y) -> x + y;
         System.out.println(addAndReturnValueFunc2.apply(10, 20));   // 30
-
-
     }
 }
