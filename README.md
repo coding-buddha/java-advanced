@@ -4,3 +4,4 @@
 1. [블로그 글 : [java8] Java8InAction 읽기 & 기록 [ch01 ~ ch03]](https://pasudo123.tistory.com/387)
 2. [블로그 글 : [java8] Java8InAction 읽기 & 기록 [ch04 ~ ch05]](https://pasudo123.tistory.com/388)
 3. [블로그 글 : [java8] Java8InAction 읽기 & 기록 [ch06 ~]](https://pasudo123.tistory.com/391)
+4. [블로그 글 : [java8] Java8InAction 읽기 & 기록 [ch07 ~ ch08]](https://pasudo123.tistory.com/399)
