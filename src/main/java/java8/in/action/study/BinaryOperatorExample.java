@@ -1,7 +1,6 @@
 package java8.in.action.study;
 
-import java8.functional.ex01.BiFunction;
-
+import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
 
 public class BinaryOperatorExample {
