@@ -1,7 +1,10 @@
-package basis;
+package basis.structure;
 
+import basis.structure.ListBasis;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,5 +32,15 @@ class ListBasisTest {
         assertThat(ret).hasSize(2);
         assertThat(ret.get(0)).isSameAs(4);
         assertThat(ret.get(1)).isSameAs(5);
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {1, 2, 3, 4, 5})
+    @DisplayName("값을 삽입하고 배열을 만든다.")
+    public void generateListTest(final int value) {
+        final List<Integer> list = listBasis.generateListByValue(value);
+        assertThat(list).hasSize(1);
+
+        listBasis.solution(new int[]{1, 2, 3, 4, 5});
     }
 }

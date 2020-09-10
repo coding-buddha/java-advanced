@@ -1,4 +1,4 @@
-package basis;
+package basis.structure;
 
 import java.util.Iterator;
 import java.util.LinkedHashSet;
