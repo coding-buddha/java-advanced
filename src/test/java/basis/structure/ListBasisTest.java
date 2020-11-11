@@ -16,6 +16,20 @@ class ListBasisTest {
 
     private final ListBasis listBasis = new ListBasis();
 
+    @Test
+    @DisplayName("첫번째 인덱스를 반환한다.")
+    public void getFistIndexByElementTest() {
+        final List<Integer> list = new ArrayList<>();
+        list.add(120);
+        list.add(130);
+        list.add(150);
+        list.add(150);
+        list.add(150);
+        list.add(180);
+        list.add(190);
+
+        assertThat(listBasis.getFistIndexByElement(list, 150)).isSameAs(2);
+    }
 
     @Test
     @DisplayName("서브리스트를 수행한다.")
@@ -40,7 +54,5 @@ class ListBasisTest {
     public void generateListTest(final int value) {
         final List<Integer> list = listBasis.generateListByValue(value);
         assertThat(list).hasSize(1);
-
-        listBasis.solution(new int[]{1, 2, 3, 4, 5});
     }
 }
