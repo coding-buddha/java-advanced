@@ -1,6 +1,6 @@
 package java8.in.action.ch10;
 
-import java.util.Optional;
+import java.util.*;
 
 public class OptionalPatternExample {
 
@@ -12,7 +12,7 @@ public class OptionalPatternExample {
         Person richPerson = new Person("PARK", new Wallet(new Money(50000L)));
         Optional<Wallet> w1 = Optional.of(richPerson.getWallet());
         Optional<Money> m1 = w1.map(Wallet::getMoney);
-        System.out.println("result1 : " + m1.isPresent());
+        System.out.println("result1 : " + ((m1.isPresent()) ? "지갑에 돈이 있습니다." : "지갑에 돈이 한 푼도 없습니다."));
 
         /**
          * poorPerson 은 지갑안에 아무것도 없다.
@@ -20,7 +20,10 @@ public class OptionalPatternExample {
         Person poorPerson = new Person("PARK", new Wallet());
         Optional<Wallet> w2 = Optional.of(poorPerson.getWallet());
         Optional<Money> m2 = w2.map(Wallet::getMoney);
-        System.out.println("result2 : " + m2.isPresent());
+        System.out.println("result2 : " + ((m2.isPresent()) ? "지갑에 돈이 있습니다." : "지갑에 돈이 한 푼도 없습니다."));
+
+        List<Integer> list = Arrays.asList(0);
+        list.set(0, 5);
 
         /**
          * map 의 간결화
@@ -39,4 +42,37 @@ public class OptionalPatternExample {
                 .map(Wallet::getMoney)
                 .orElse(new Money(0L));
     }
+
+    public List<Integer> getRow(int rowIndex) {
+        if(rowIndex == 0) {
+            return Collections.singletonList(1);
+        }
+
+        if(rowIndex == 1) {
+            return Arrays.asList(1, 1);
+        }
+
+        List<Integer> list = Arrays.asList(1, 2, 1);
+        return process(rowIndex, 2, list);
+    }
+
+    private List<Integer> process(final int targetIndex, final int currentIndex, final List<Integer> ret) {
+        if(currentIndex == targetIndex) {
+            return ret;
+        }
+
+        ret.add(1);
+        int len = ret.size() - 1;
+
+        List<Integer> newRet = new ArrayList<>();
+        newRet.add(1);
+        for(int i = 1; i < len - 1; i++) {
+            newRet.add(ret.get(i - 1) + ret.get(i));
+        }
+        newRet.add(1);
+
+        return process(targetIndex, currentIndex + 1, newRet);
+    }
 }
+
+
