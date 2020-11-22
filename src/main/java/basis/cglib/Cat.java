@@ -1,8 +1,8 @@
 package basis.cglib;
 
-public class Cat implements Animal{
+public final class Cat implements Animal{
     @Override
-    public void cry() {
+    public final void cry() {
         System.out.println("meow meow meow..");
     }
 }
