@@ -4,6 +4,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Future;
 import java.util.concurrent.ThreadLocalRandom;
 
+// 상점
 public class Shop {
 
     private final String product;
@@ -18,6 +19,12 @@ public class Shop {
 
     public void doSomething() {
         System.out.println("do something...");
+    }
+
+    public String getPriceByProduct() {
+        final long price = getPrice();
+        final Discount.Code code = Discount.Code.values()[ThreadLocalRandom.current().nextInt(1, Discount.Code.values().length)];
+        return String.format("%s:%d:%s", product, price, code);
     }
 
     // 동기 방식
