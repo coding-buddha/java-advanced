@@ -29,4 +29,20 @@ class Coffee {
     public String getName() {
         return this.name;
     }
+
+    public void makeCoffee() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Coffee{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }
