@@ -11,6 +11,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * https://www.logicbig.com/tutorials/core-java-tutorial/java-util-stream/lazy-evaluation.html
+ * https://www.javaprogramto.com/2019/06/java-8-stream-intermediate-operations.html
+ * https://www.javaprogramto.com/2020/04/java-8-14-stream-terminal-operations.html
  */
 @DisplayName("LazyEvaluationExample 클래스는")
 class LazyEvaluationExampleTest {
